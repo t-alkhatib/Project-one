@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(255, 182, 193, 0.5), rgba(255,246,246, 1));
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.progress{
+    display: none;
+}
+
+.progress-show {
+    max-width: 90%;
+    display: block;
+    position: absolute;
+    top: 0%;
+    padding: 17px 120px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #fff1f3;
+    box-shadow: 0px 5px 5px 3px #ffc0cb;
+    transition: display 1s;
+}
+
+.progress-title {
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    max-width: 100%;
+    height: 4px;
+    padding-right: 180px;
+    float: left;
+    padding-left: 0px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.progress-bar:hover {
+    cursor: pointer;
+}
+
+.progress-current {
+    width: 0px;
+    height: 4px;
+    float: left;
+    border-radius: 10px;
+    background-color: #ff8396;
+}
+
+.player-bar {
+    position: relative;
+    padding: 15px 80px;
+    background-color: rgb(255, 246, 246);
+    border-radius: 10px;
+    box-shadow: -1px 5px 8px 5px #ffc0cb;
+
+}
+
+.player-bar img {
+    position: absolute;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    left: 5%;
+    top: -45%;
+}
+
+.play-spin {
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.image-container::after {
+    content: "";
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 13%;
+    top: -6%;
+    border-radius: 50%;
+}
+
+.prev {
+    padding: 5px 20px;
+    border: none;
+    background-color: inherit;
+}
+
+.play {
+    padding: 5px 20px;
+    border: none;
+    background-color: inherit;
+}
+
+.next {
+    padding: 5px 20px;
+    border: none;
+    background-color: inherit;
+}
+
+.prev i, .play i, .next i {
+    opacity: 0.3;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
